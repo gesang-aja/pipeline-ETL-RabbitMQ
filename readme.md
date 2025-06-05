@@ -105,3 +105,6 @@ project/
 ├── README.md              # Dokumentasi
 
 
+** berikut link gdrive  model  RF_clickbait_klasifikasi.joblib da  RF_topik_klasifikasi.joblib :
+
+https://drive.google.com/drive/folders/1Zagkjh0MLCtjFRPFCV_J-I34zP2NNmaj?usp=sharing
