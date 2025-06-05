@@ -81,9 +81,9 @@ project/
 ├── app/
 │ 
 │   ├── celery_config.py             # Konfigurasi Celery & Queue
-│   │ 
+ 
 │   ├── chain.py                     # Definisi chain task ETL
-│   │ 
+ 
 │   ├── file_prepocessing.py         # Fungsi pembersihan dan preprocessing
 │   │ 
 │   ├── file_clickbait_klasifikasi.py  # Model klasifikasi clickbait
@@ -104,5 +104,4 @@ project/
 │ 
 ├── README.md              # Dokumentasi
 │ 
-├── .gitignore
 
