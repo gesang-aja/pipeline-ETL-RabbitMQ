@@ -24,8 +24,11 @@ Buka **CMD sebagai Administrator**, lalu jalankan:
 
 -----cmd-----
 rabbitmq-service start
+
 rabbitmq-plugins enable rabbitmq_management
+
 akses dashboard UI-nya di browser:
+
 http://localhost:15672
 
 ### 3. Clone Repository
@@ -35,13 +38,18 @@ git clone https://github.com/username/pipeline-clickbait.git
 cd pipeline-clickbait
 
 ### 3. membuat dan mengaktifkan  virtual enviroment
+
 python -m venv venv # membuat venv
+
 venv\Scripts\activate  # mengaktifkan venv
+
 pip install -r requirements.txt # install dependensi
 
 
 ### 4. jalankan worker setiap queue + flower
+
 Buka ti4ga terminal lalu jalankan masing masing script dibawah  : 
+
 celery -A app.celery_config.app worker --loglevel=info --queues=antrian_preprocessing --pool=solo --hostname=worker_preprocessing@%h
 
 celery -A app.celery_config.app worker --loglevel=info --queues=antrian_klasifikasi --pool=solo --hostname=worker_klasifikasi@%h
@@ -51,7 +59,9 @@ celery -A app.celery_config.app worker --loglevel=info --queues=antrian_clusteri
 celery -A app.celery_config flower
 
 ### 5. jalankan producer
+
 Buka terminal dan jalankan : 
+
 python run_producer.py
 
 ### 6. contoh output 
