@@ -14,7 +14,9 @@ Sistem otomatis berbasis Celery dan RabbitMQ untuk klasifikasi berita clickbait 
 ###  1. Instalasi  RabbitMQ  
 
 Menginstall Erlang dan RabbitMQ.
+
 Erlang: https://www.erlang.org/downloads
+
 RabbitMQ: https://www.rabbitmq.com/download.html
 
 ### 2.Menjalankan RabbitMQ
@@ -23,7 +25,8 @@ Buka **CMD sebagai Administrator**, lalu jalankan:
 -----cmd-----
 rabbitmq-service start
 rabbitmq-plugins enable rabbitmq_management
-akses dashboard UI-nya di browser:http://localhost:15672
+akses dashboard UI-nya di browser:
+http://localhost:15672
 
 ### 3. Clone Repository
 
@@ -37,13 +40,15 @@ venv\Scripts\activate  # mengaktifkan venv
 pip install -r requirements.txt # install dependensi
 
 
-### 4. jalankan worker setiap queue
-Buka tiga terminal lalu jalankan masing masing script dibawah  : 
+### 4. jalankan worker setiap queue + flower
+Buka ti4ga terminal lalu jalankan masing masing script dibawah  : 
 celery -A app.celery_config.app worker --loglevel=info --queues=antrian_preprocessing --pool=solo --hostname=worker_preprocessing@%h
 
 celery -A app.celery_config.app worker --loglevel=info --queues=antrian_klasifikasi --pool=solo --hostname=worker_klasifikasi@%h
 
 celery -A app.celery_config.app worker --loglevel=info --queues=antrian_clustering --pool=solo --hostname=worker_clustering@%h
+
+celery -A app.celery_config flower
 
 ### 5. jalankan producer
 Buka terminal dan jalankan : 
