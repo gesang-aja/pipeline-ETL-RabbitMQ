@@ -77,31 +77,31 @@ python run_producer.py
 
 ## 📂 struktur folder
 project/
-│
+
 ├── app/
-│ 
+
 │   ├── celery_config.py             # Konfigurasi Celery & Queue
  
 │   ├── chain.py                     # Definisi chain task ETL
  
 │   ├── file_prepocessing.py         # Fungsi pembersihan dan preprocessing
-│   │ 
+
 │   ├── file_clickbait_klasifikasi.py  # Model klasifikasi clickbait
-│   │ 
+
 │   ├── file_topik_klasifikasi.py    # Model klasifikasi topik berita
-│   │ 
+ 
 │   ├── file_load.py                 # Fungsi penyimpanan/visualisasi hasil
-│   │ 
+ 
 │   ├── RF_clickbait_klasifikasi.joblib  # Model clickbait (joblib)
-│   │ 
+
 │   ├── RF_topik_klasifikasi.joblib      # Model topik berita (joblib)
-│   │ 
+
 │   ├── data_scrap.csv               # Dataset simulasi berita
-│
+
 ├── run_producer.py        # Producer / main.py
-│ 
+
 ├── requirements.txt       # Daftar dependensi
-│ 
+
 ├── README.md              # Dokumentasi
-│ 
+
 
